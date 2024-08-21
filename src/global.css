@@ -1,0 +1,18 @@
+:root {
+  --colour1: #dad7cd;
+  --colour2: #a3b18a;
+  --colour3: #588157;
+  --colour4: #3a5a40;
+  --colour5: #344e41;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: var(--colour1);
+  background-color: var(--colour3);
+
+}
