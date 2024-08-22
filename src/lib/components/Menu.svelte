@@ -5,7 +5,7 @@
       <a href="/" class="pure-menu-link">Home</a>
     </li>
     <li class="pure-menu-item">
-        <a href="/guess/flowers" class="pure-menu-link">Flowers</a>
+        <a href="/guess/wildflowers" class="pure-menu-link">Wildflowers</a>
     </li>
     <li class="pure-menu-item">
         <a href="/guess/trees" class="pure-menu-link">Trees</a>

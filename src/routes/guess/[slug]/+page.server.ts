@@ -1,19 +1,51 @@
-import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
+import { error } from '@sveltejs/kit';
+import { supabase } from '$lib/supabaseClient';
+import { readFile } from "fs/promises";
 
 export const load: PageServerLoad = async ({ params }) => {
+	let data = {
+		title: "",
+		dataset: [],
+	};
   switch(params.slug.toLowerCase()) {
-		case "flowers": {
+		case "wildflowers":
+			data.title = "Wildflowers";
+			data.dataset = await getDataset("wildflowers");
 			break;
-		}
-		case "trees": {
-			break
-		}
-		default: {
+		case "trees":
+			data.title = "Trees";
+			data.dataset = await getDataset("trees");
+			break;
+		case "fungi":
+			data.title = "Fungi";
+			data.dataset = await getDataset("fungi");
+			break;
+		default:
 			error(404);
-		}
   }
-	// return {
-	// 	post: await db.getPost(params.slug),
-	// };
-};
+	return data;
+}
+
+async function getDataset(type: string) {
+	return await readJsonFile(`src/lib/${type}.json`);
+}
+
+async function readJsonFile(path: string) {
+  const file = await readFile(path, "utf8");
+  return JSON.parse(file);
+}
+
+// async function getDataset(type: string) {
+// 	const { data, error } = await supabase
+//   .storage
+//   .from('greenguesser')
+//   .list(type, {
+//     limit: 100,
+//     offset: 0,
+//     // sortBy: { column: 'name', order: 'asc' }
+//   });
+// 	console.log(data);
+// 	console.log(error);
+	
+// }
