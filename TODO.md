@@ -1,0 +1,2 @@
+- Select a random image to show each time for the current plant as opposed to showing the same one every time
+- Bonus questions after inital correct answer - opens multiple choice q's like: "is poisonous?/is edible?"

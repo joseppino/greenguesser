@@ -203,15 +203,5 @@
     "common_name": "Wood forget-me-not",
     "latin_name": "Myosotis sylvatica",
     "image_path": "/greenguesser/wildflowers/wood_forget-me-not.jpg"
-  },
-  {
-    "common_name": "Dandelion",
-    "latin_name": "Taraxacum officinale",
-    "image_path": "/greenguesser/wildflowers/dandelion.jpg"
-  },
-  {
-    "common_name": "Hops",
-    "latin_name": "Humulus lupulus",
-    "image_path": "/greenguesser/wildflowers/hops.jpg"
   }
 ]

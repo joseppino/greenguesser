@@ -1,7 +1,7 @@
 <script lang="ts">
   import GameSummary from "$lib/components/GameSummary.svelte";
   import Question from "$lib/components/Question.svelte";
-  import shuffleArray from "$lib/shuffleArray.js";
+  import shuffleArray from "$lib/shuffleArray";
 
   export let data;
 
@@ -21,19 +21,23 @@
   let btnSurrender: HTMLButtonElement;
   let surrenderClicks: number = 0;
 
-  $: if(surrenderClicks === 1) {
-    btnSurrender.innerText = "Sure?";
-    // give 2 seconds to confirm
-    setTimeout(() => {
-      btnSurrender.innerText = "Give Up";
-      surrenderClicks = 0;
-    }, 2000);
-  } else if(surrenderClicks > 1) {
-    // hacky way to work out the remaining number of questions and "skip" them
-    for(let i=currentQuestionIndex; i < numQuestions; i++) {
-      skippedQs.push([]);
-    }
-    endGame();
+  $: if(surrenderClicks === 1 && !gameOver) {
+      btnSurrender.innerText = "Sure?";
+      // give 2 seconds to confirm
+      setTimeout(() => {
+        if(!gameOver) {
+          btnSurrender.innerText = "Give Up";
+          surrenderClicks = 0;
+        }
+      }, 2000);
+  } else if(surrenderClicks === 2 && !gameOver) {
+
+      // hacky way to work out the remaining number of questions and "skip" them
+      for(let i=currentQuestionIndex; i < numQuestions; i++) {
+        skippedQs.push([]);
+      }
+      endGame();
+  
   }
 
   $: if(gameStarted) {
@@ -52,11 +56,10 @@
   function endGame() {
     gameStarted = false;
     gameOver = true;
-    currentQuestionIndex = 0;
   }
 </script>
 
-<h1>{data.title}</h1>
+<h2>{data.title}</h2>
 {#if !gameStarted && !gameOver}
   <form class="pure-form pure-form-stacked">
     <fieldset>
@@ -85,9 +88,12 @@
   </form>
 {:else if gameStarted}
   {#if questionSet.length > 0}
-    <p>Question {currentQuestionIndex+1}/{numQuestions}</p>
+    <p class="question-counter">
+      Question {currentQuestionIndex+1}/{numQuestions}
+    </p>
     <Question
-      questionData={questionSet[currentQuestionIndex]} 
+      questionData={questionSet[currentQuestionIndex]}
+      dataset={data.dataset}
       optionSet={questionSet}
       bind:currentQuestionIndex={currentQuestionIndex}
       bind:correctQs={correctQs}
@@ -95,8 +101,7 @@
       bind:skippedQs={skippedQs}
       {mode}
     />
-    <br>
-    <div>
+    <div class="surrenderBtn-wrapper">
       <button type="button" class="pure-button button-warning"
       bind:this={btnSurrender}
       on:click={() => surrenderClicks += 1}>
@@ -118,11 +123,24 @@
 {/if}
 
 <style>
+  fieldset {
+    display: flex;
+    flex-direction: column;
+  }
+
   label:hover {
     cursor: pointer;
   }
 
   .button-warning {
-    /* background-color: var(--colour1); */
+    width: 6rem;
+  }
+
+  .question-counter {
+    margin-top: 1px;
+  }
+
+  .surrenderBtn-wrapper {
+    margin-top: 2rem;
   }
 </style>

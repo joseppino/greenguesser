@@ -1,0 +1,114 @@
+[
+  {
+    "common_name": "Collared earthstar",
+    "latin_name": "Geastrum triplex",
+    "image_path": "/greenguesser/fungi/collared_earthstar.jpg",
+    "edible": "no",
+    "poisonous": "no",
+    "growing_seasons": ["summer","autumn"]
+  },
+  {
+    "common_name": "Common earthball",
+    "latin_name": "Scleroderma citrinum",
+    "image_path": "/greenguesser/fungi/common_earthball.jpg",
+    "edible": "no",
+    "poisonous": "yes",
+    "growing_seasons": ["summer","autumn"]
+  },
+  {
+    "common_name": "Common inkcap",
+    "latin_name": "Coprinopsis atramentaria",
+    "image_path": "/greenguesser/fungi/common_inkcap.jpg",
+    "edible": "no",
+    "poisonous": "yes",
+    "growing_seasons": ["spring","summer","autumn"]
+  },
+  {
+    "common_name": "Fly agaric",
+    "latin_name": "Amanita muscaria",
+    "image_path": "/greenguesser/fungi/fly_agaric.jpg",
+    "edible": "no",
+    "poisonous": "yes",
+    "growing_seasons": ["summer","autumn"]
+  },
+  {
+    "common_name": "Common puffball",
+    "latin_name": "Lycoperdon perlatum",
+    "image_path": "/greenguesser/fungi/common_puffball.jpg",
+    "edible": "yes",
+    "poisonous": "no",
+    "growing_seasons": ["summer","autumn"]
+  },
+  {
+    "common_name": "Jelly ear",
+    "latin_name": "Auricularia auricula-judae",
+    "image_path": "/greenguesser/fungi/jelly_ear.jpg",
+    "edible": "yes",
+    "poisonous": "no",
+    "growing_seasons": ["spring","summer","autumn","winter"]
+  },
+  {
+    "common_name": "Scarlet elfcup",
+    "latin_name": "Sarcoscypha coccinea",
+    "image_path": "/greenguesser/fungi/scarlet_elfcup.jpg",
+    "edible": "yes",
+    "poisonous": "no",
+    "growing_seasons": ["spring","winter"]
+  },
+  {
+    "common_name": "Stinkhorn",
+    "latin_name": "Phallus impudicus",
+    "image_path": "/greenguesser/fungi/stinkhorn.jpg",
+    "edible": "yes",
+    "poisonous": "no",
+    "growing_seasons": ["summer","autumn"]
+  },
+  {
+    "common_name": "Shaggy parasol",
+    "latin_name": "Chlorophyllum rhacodes",
+    "image_path": "/greenguesser/fungi/shaggy_parasol.jpg",
+    "edible": "yes",
+    "poisonous": "no",
+    "growing_seasons": ["summer","autumn"]
+  },
+  {
+    "common_name": "Devil's fingers",
+    "latin_name": "Clathrus archeri",
+    "image_path": "/greenguesser/fungi/devil's_fingers.jpg",
+    "edible": "no",
+    "poisonous": "no",
+    "growing_seasons": ["summer","autumn"]
+  },
+  {
+    "common_name": "Dead man's fingers",
+    "latin_name": "Xylaria polymorpha",
+    "image_path": "/greenguesser/fungi/dead_man's_fingers.jpg",
+    "edible": "no",
+    "poisonous": "no",
+    "growing_seasons": ["spring","summer","autumn","winter"]
+  },
+  {
+    "common_name": "The sickener",
+    "latin_name": "Russula emetica",
+    "image_path": "/greenguesser/fungi/the_sickener.jpg",
+    "edible": "no",
+    "poisonous": "yes",
+    "growing_seasons": ["summer","autumn"]
+  },
+  {
+    "common_name": "The goblet",
+    "latin_name": "Pseudoclitocybe cyathiformis",
+    "image_path": "/greenguesser/fungi/the_goblet.jpg",
+    "edible": "yes",
+    "poisonous": "no",
+    "growing_seasons": ["autumn","winter"]
+  },
+  {
+    "common_name": "Liberty cap",
+    "latin_name": "Psilocybe semilanceata",
+    "image_path": "/greenguesser/fungi/liberty_cap.jpg",
+    "edible": "no",
+    "poisonous": "no",
+    "growing_seasons": ["autumn","winter"]
+  },
+]

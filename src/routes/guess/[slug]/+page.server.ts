@@ -28,7 +28,20 @@ export const load: PageServerLoad = async ({ params }) => {
 }
 
 async function getDataset(type: string) {
-	return await readJsonFile(`src/lib/${type}.json`);
+	const { data, error } = await supabase
+  .storage
+  .from('greenguesser')
+  .download(`${type}/${type}.json`);
+	if(error) {
+		console.log(`ERRORED ` + `${type}/${type}.json`);
+		console.error(error);
+	} else {
+		const arrayBuffer = await data.arrayBuffer();
+		const jsonString = new TextDecoder("utf-8").decode(arrayBuffer);
+		const jsonObject = JSON.parse(jsonString);
+		return jsonObject;
+	}
+	return {};
 }
 
 async function readJsonFile(path: string) {
